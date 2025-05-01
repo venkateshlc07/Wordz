@@ -1,27 +1,43 @@
 package com.wordz.game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Score {
 
     private final String correctWord;
     private Letter result = Letter.INCORRECT;
     private int position;
+    private final List<Letter> results = new ArrayList<>();
 
     public Score(String wordGuess) {
         this.correctWord = wordGuess;
     }
 
     public Letter letter(int position) {
-        return result;
+        return results.get(position);
     }
 
     public void assess(String wordGuess) {
-        if(isCorrectLetter(wordGuess))
-            result = Letter.CORRECT;
-        }
+        for (char current : wordGuess.toCharArray()){
+            if(isCorrectLetter(current)) {
+                results.add(Letter.CORRECT);
+            }else if(occursInWord(current)){
+                results.add(Letter.PART_CORRECT);
+            }else{
+                results.add(Letter.INCORRECT);
+            }
+            position++;
+    }
+}
+
+    private boolean occursInWord(char current) {
+        return correctWord.contains(String.valueOf(current));
+    }
 
 
-    private boolean isCorrectLetter(String wordGuess) {
-        return correctWord.charAt(position) == wordGuess.charAt(position);
+    private boolean isCorrectLetter(char charLetter) {
+        return correctWord.charAt(position) == charLetter;
     }
     }
 

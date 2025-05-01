@@ -3,8 +3,8 @@ package com.wordz.game;
 public class Word {
     private final String word;
 
-    public Word(String correctrWord) {
-        this.word = correctrWord;
+    public Word(String correctWord) {
+        this.word = correctWord;
     }
 
     public Score guess(String wordGuess) {
