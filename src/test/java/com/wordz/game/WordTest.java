@@ -13,9 +13,8 @@ public class WordTest {
 	public void oneIncorrectLetter(){
 		var word = new Word("A");
 		Score score = word.guess("C");
-		var result = score.letter(0);
 
-		assertThat(result).isEqualTo(Letter.INCORRECT);
+		assertScoreForLetter(score,0, Letter.INCORRECT);
 	}
 
 	@Test
@@ -23,8 +22,11 @@ public class WordTest {
 		var word = new Word("A");
 		Score score = word.guess("A");
 
-		var result = score.letter(0);
-		assertThat(result).isEqualTo(Letter.CORRECT);
+		assertScoreForLetter(score,0, Letter.CORRECT);
+	}
+
+	private void assertScoreForLetter(Score score, int position, Letter expected){
+		assertThat(score.letter(position)).isEqualTo(expected);
 	}
 
 
