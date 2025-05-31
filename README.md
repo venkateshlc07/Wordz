@@ -8,7 +8,8 @@ It does not include user authentication or a frontend UI,
 
 The workflow we will use is typical for an agile TDD project:
 
-`1.Pick a user story prioritized for impact.
+`````
+1.Pick a user story prioritized for impact.
 
 2.Think a little about the design to aim for.
 
@@ -16,7 +17,8 @@ The workflow we will use is typical for an agile TDD project:
 
 4.Use TDD to write code to connect the core to a database.
 
-5.Use TDD to write code to connect to an API endpoint.`
+5.Use TDD to write code to connect to an API endpoint.
+`````
 
 This process repeats. It forms the rhythm of writing the core application logic under a unit test, then
 growing the application outward, connecting it to API endpoints, user interfaces, databases, and
@@ -35,7 +37,7 @@ After each guess, feedback is provided per letter:
 ⬜ White background: Letter not present in the word.
 
 Points are awarded based on how quickly the word is guessed:
-
+`````
 1st Attempt: 6 points
 
 2nd Attempt: 5 points
@@ -47,5 +49,5 @@ Points are awarded based on how quickly the word is guessed:
 5th Attempt: 2 points
 
 6th Attempt: 1 point
-
+`````
 Players compete across rounds to achieve the highest total score.
