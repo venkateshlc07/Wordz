@@ -20,16 +20,18 @@ public class Score {
 
     public void assess(String wordGuess) {
         for (char current : wordGuess.toCharArray()){
-            if(isCorrectLetter(current)) {
-                results.add(Letter.CORRECT);
-            }else if(occursInWord(current)){
-                results.add(Letter.PART_CORRECT);
-            }else{
-                results.add(Letter.INCORRECT);
-            }
+            results.add(scoreFor(current));
             position++;
     }
-}
+    }
+
+    private Letter scoreFor(char current){
+        if(isCorrectLetter(current))
+            return Letter.CORRECT;
+        if(occursInWord(current))
+            return Letter.PART_CORRECT;
+        return Letter.INCORRECT;
+    }
 
     private boolean occursInWord(char current) {
         return correctWord.contains(String.valueOf(current));
