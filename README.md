@@ -30,9 +30,9 @@ The objective is to guess a five-letter word in up to six attempts.
 
 After each guess, feedback is provided per letter:
 
-🟦 Blue background: Correct letter in the correct position.
+🟩 Green background: Correct letter in the correct position.
 
-🟩 Green background: Correct letter in the wrong position.
+🟦 Blue background: Correct letter in the wrong position.
 
 ⬜ White background: Letter not present in the word.
 
