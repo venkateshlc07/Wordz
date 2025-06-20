@@ -1,4 +1,4 @@
-package com.wordz.game;
+package com.wordz.domain;
 
 public enum Letter {
     INCORRECT,
