@@ -11,7 +11,6 @@ public class WordTest {
 	public void oneInCorrectLetter(){
 		var word = new Word("A");
 		Score score = word.guess("C");
-
 		assertScoreForLetter(score,0, Letter.INCORRECT);
 	}
 
@@ -19,7 +18,6 @@ public class WordTest {
 	public void oneCorrectLetter(){
 		var word = new Word("A");
 		Score score = word.guess("A");
-
 		assertScoreForLetter(score,0, Letter.CORRECT);
 	}
 
@@ -40,14 +38,11 @@ public class WordTest {
 	private void assertScoreForGuess(Score score, Letter... expectedScores) {
 		for(int position=0; position < expectedScores.length; position++){
 			Letter expected = expectedScores[position];
-
 			assertThat(score.letter(position)).isEqualTo(expected);
 		}
 	}
 
-
 	private void assertScoreForLetter(Score score, int position, Letter expected){
 		assertThat(score.letter(position)).isEqualTo(expected);
 	}
-
 }

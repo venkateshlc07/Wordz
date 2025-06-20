@@ -6,7 +6,6 @@ import java.util.List;
 public class Score {
 
     private final String correctWord;
-    private Letter result = Letter.INCORRECT;
     private int position;
     private final List<Letter> results = new ArrayList<>();
 
@@ -22,7 +21,7 @@ public class Score {
         for (char current : wordGuess.toCharArray()){
             results.add(scoreFor(current));
             position++;
-    }
+        }
     }
 
     private Letter scoreFor(char current){
@@ -37,9 +36,8 @@ public class Score {
         return correctWord.contains(String.valueOf(current));
     }
 
-
     private boolean isCorrectLetter(char charLetter) {
         return correctWord.charAt(position) == charLetter;
     }
-    }
+}
 
